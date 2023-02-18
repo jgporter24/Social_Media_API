@@ -15,9 +15,10 @@ const userSchema = new Schema(
             match: [/.+@+\.+/, 'Must be a valid email address']
         },
         thoughts: [
-            {type: Schema.Types.ObjectId
-            ref: "Thought", 
-        },
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Thought' 
+            },
         ],
         freinds: [
             {
@@ -35,7 +36,7 @@ const userSchema = new Schema(
     }
 );
 
-userSchema.virtual('friendCount').get(funcition() {
+userSchema.virtual('friendCount').get(function() {
     return this.friends.length
 });
 
