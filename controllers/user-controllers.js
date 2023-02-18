@@ -1,5 +1,5 @@
 const { request } = require('http');
-const { User, Thought } = require('../modles');
+const { User, Thought, } = require('../models');
 
 const userControllers = {
     async getAllUsers() {
