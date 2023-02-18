@@ -51,7 +51,7 @@ const thoughtControllers = {
             res.status(500).json(err);
         }
     },
-    async deleteThought(req, req) {
+    async deleteThought(req, res) {
         try {
             const deletedThought = await Thought.findOneAndRemove(
                 {
