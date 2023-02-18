@@ -1,3 +1,4 @@
+const { request } = require('http');
 const { User, Thought } = require('../modles');
 
 const userControllers = {
@@ -47,6 +48,10 @@ const userControllers = {
     async deleteUser(req, res) {
         try {
             const deleteUser = await User.fineOneAndRemove({ _id: req.params.id, });
+            if (!deleteUser) {
+                res.status(404).json("User not found");
+            }
+            res.status(200).json(deletedUser);
         } catch (err) {
             res.status(500).json(err);
         }
