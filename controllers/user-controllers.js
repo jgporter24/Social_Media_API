@@ -10,7 +10,7 @@ const userControllers = {
             res.statsu(500).json('something went wrong')
         }
     },
-    asynch getSingleUser() {
+    async getSingleUser() {
         try {
             const user = await User.findOne({ _id: req.params.id }).select("-_v").populate('thoughts').populate('friends');
             if (!user) {
