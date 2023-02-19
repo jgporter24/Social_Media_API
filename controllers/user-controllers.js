@@ -1,5 +1,4 @@
-const { request } = require('http');
-const { User, Thought, } = require('../models');
+const { User, Thought } = require('../models');
 
 const userControllers = {
     async getAllUsers() {
@@ -7,7 +6,7 @@ const userControllers = {
             const users = await User.find({}).select('-_v').populate('thoughts').populate('friends');
             res.status(200).json(users);
         } catch (err) {
-            res.status(500).json('something went wrong')
+            res.status(500).json("something went wrong");
         }
     },
     async getSingleUser() {

@@ -1,6 +1,4 @@
-const { request } = require("http");
 const { Thought, User } = require("../models");
-const userControllers = require("./user-controllers");
 
 const thoughtControllers = {
     async getAllThoughts(req, res) {
