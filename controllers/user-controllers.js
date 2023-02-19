@@ -6,7 +6,7 @@ const userControllers = {
             const users = await User.find({}).select('-_v').populate('thoughts').populate('friends');
             res.status(200).json(users);
         } catch (err) {
-            res.status(500).json("something went wrong");
+            res.status(500).json(err);
         }
     },
     async getSingleUser() {
@@ -21,7 +21,7 @@ const userControllers = {
             res.status(500).json(err);
         }
     },
-    async createUser(reg, res) {
+    async createUser(req, res) {
         try {
             const newUser = await User.create(req.body);
             res.status(200).json(newUser);
@@ -36,10 +36,10 @@ const userControllers = {
                 { $set: req.body },
                 { new: true }
             );
-            if (!updatedUser) {
+            if (!updateUser) {
                 res.status(404).json("User not found");
             }
-            res.status(200).json(updatedUser);
+            res.status(200).json(updateUser);
         } catch (err) {
             res.status(500).json(err);
         }
