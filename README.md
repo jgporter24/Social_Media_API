@@ -5,11 +5,16 @@
 ## Description
 The purpose of this API is to be a basic framework for users to share thoughts, react to friends thoughts, and even add friends or create friend lists. These can also be updated or deleted. Check out the walkthrough video for a brief example. 
 
+
+
+https://user-images.githubusercontent.com/110738676/219921878-4a92bcac-83a1-4dd2-bee5-0fff0fbf92cd.mp4
+
+
+
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contribution](#contribution)
-* [Tests](#tests)
 * [Questions](#questions)
 * [License](#license)
     
