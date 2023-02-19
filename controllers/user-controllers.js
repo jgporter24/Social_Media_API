@@ -1,7 +1,7 @@
 const { User, Thought } = require('../models');
 
 const userControllers = {
-    async getAllUsers() {
+    async getAllUsers(req, res) {
         try {
             const users = await User.find({}).select('-_v').populate('thoughts').populate('friends');
             res.status(200).json(users);
