@@ -7,7 +7,7 @@ const userControllers = {
             const users = await User.find({}).select('-_v').populate('thoughts').populate('friends');
             res.status(200).json(users);
         } catch (err) {
-            res.statsu(500).json('something went wrong')
+            res.status(500).json('something went wrong')
         }
     },
     async getSingleUser() {
